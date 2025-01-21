@@ -14,6 +14,8 @@ router.post('/', async (req, res) => {
     const history = new History({ url, timestamp });
     await history.save();
 
+    console.log("Success")
+
     res.status(201).json({ message: 'History saved', history });
   } catch (error) {
     console.error('Error saving history:', error);
